@@ -56,11 +56,11 @@ public class ParserXml {
 
     public static Node getStep(Document doc, String num, String playerId, String location) {
         Element step = doc.createElement("Step");
+        step.appendChild(doc.createTextNode(location));
         step.setAttribute("num", num);
         step.setAttribute("playerId", playerId);
-        step.setAttribute("location", location);
         return step;
-        //game.appendChild(step);
+
     }
 
     public static Node getPlayer (Document doc, String id, String name, String symbol) {
