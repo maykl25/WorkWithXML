@@ -260,7 +260,7 @@ public class Game {
         System.out.println(two.getName() + " " + two.getSymbol() + " " + two.getId());
         System.out.println("Игрок 2 совершил " + two.count + " ходов.");*/
 
-        File file = new File("D:\\test.xml");
+        File file = new File("\\test.xml");
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
