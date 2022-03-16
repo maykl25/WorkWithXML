@@ -214,14 +214,14 @@ public class Game {
                 game.appendChild(ParserXml.getStep(doc, Player.step + "", one.getId() + "", one.getLocation()));
                 printField();
                 if (checkWin(firstPlayerSign)) {
-                    game.appendChild(ParserXml.getResult(doc,one.getId() + "", one.getName(), one.getSymbol() + "" ));
+                    root.appendChild(ParserXml.getResult(doc,one.getId() + "", one.getName(), one.getSymbol() + "" ));
                     System.out.println(firstPlayerName + " победил(a)!");
                     firstCount +=3 ;
                     break;
                 }
                 if (isFieldFull()) {
                     System.out.println("Ничья!");
-                    game.appendChild(ParserXml.getDraw(doc));
+                    root.appendChild(ParserXml.getDraw(doc));
                     firstCount++;
                     break;
                 }
@@ -233,14 +233,14 @@ public class Game {
                 game.appendChild(ParserXml.getStep(doc, Player.step + "", two.getId() + "", two.getLocation()));
                 printField();
                 if (checkWin(secondPlayerSign)) {
-                    game.appendChild(ParserXml.getResult(doc,two.getId() + "", two.getName(), two.getSymbol() + "" ));
+                    root.appendChild(ParserXml.getResult(doc,two.getId() + "", two.getName(), two.getSymbol() + "" ));
                     System.out.println(secondPlayerName + " победил(a)!");
                     secondCount += 3;
                     break;
                 }
                 if (isFieldFull()) {
                     System.out.println("Ничья!");
-                    game.appendChild(ParserXml.getDraw(doc));
+                    root.appendChild(ParserXml.getDraw(doc));
                     secondCount++;
                     break;
                 }
