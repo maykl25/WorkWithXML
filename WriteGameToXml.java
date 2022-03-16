@@ -113,7 +113,7 @@ public class WriteGameToXml {
 
 
             StreamResult console = new StreamResult(System.out);
-            StreamResult file = new StreamResult(new File("/languages.xml"));
+            StreamResult file = new StreamResult(new File("/GameSteps.xml"));
 
 
             transformer.transform(source, console);
