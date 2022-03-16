@@ -113,7 +113,7 @@ public class WriteGameToXml {
 
 
             StreamResult console = new StreamResult(System.out);
-            StreamResult file = new StreamResult(new File("/GameSteps.xml"));
+            StreamResult file = new StreamResult(new File("/gameSteps.xml"));
 
 
             transformer.transform(source, console);
@@ -173,7 +173,8 @@ public class WriteGameToXml {
 
         step.setAttribute("playerId", playerId);
 
-        step.appendChild(getStepElements(doc, "Step", location));
+        //step.appendChild(getStepElements(doc, "Step", location));
+        step.setAttribute("location", location);
 
         //step.appendChild(getStepElements(doc, step, "Step", location));
         return step;
