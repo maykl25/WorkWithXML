@@ -40,28 +40,6 @@ public class Game {
    public static char secondPlayerSign = 'O';
    public static char initialSign = '.';
 
-    // метод по записи в файл рейтинга игроков
-   /* public static void fileWork(String name1, String name2, int rating1, int rating2information) throws IOException {
-        //File file = new File("d:/rating.txt");
-        FileWriter fileWriter = new FileWriter(file);
-        BufferedWriter bufWriter = new BufferedWriter(fileWriter);
-
-        bufWriter.write(information);
-        bufWriter.newLine();
-        /*String rat1 = name1 + " " + rating1;
-        String rat2 = name2 + " " + rating2;
-
-        if (rating1 > rating2) {
-            bufWriter.write(rat1);
-            bufWriter.newLine();
-            bufWriter.write(rat2);
-        } else {
-            bufWriter.write(rat2);
-            bufWriter.newLine();
-            bufWriter.write(rat1);
-        }
-        bufWriter.close();
-    }*/
 
     //начальная настройка игрового поля
     public static void initialPlayField() {
@@ -192,13 +170,10 @@ public class Game {
         System.out.println("Введите имя второго игрока:");
         secondPlayerName = scanner.nextLine();
         Player two = new Player(2, secondPlayerName, secondPlayerSign);
-        //fileWork("Player " + "id=" + one.getId() + "name=" + one.getName() + "symbol= " + one.getSymbol() + "\n");
-        //fileWork("Player " + "id=" + two.getId() + "name=" + two.getName() + "symbol= " + two.getSymbol());
-
+        
 
         root.appendChild(ParserXml.getPlayer(doc, one.getId() + "", one.getName(), one.getSymbol() + ""));
         root.appendChild(ParserXml.getPlayer(doc, two.getId() + "", two.getName(), two.getSymbol() + ""));
-
 
 
         Element game = doc.createElement("Game");
@@ -253,13 +228,7 @@ public class Game {
                 repeat = false;
             }
             Player.step = 1;
-        }
-        //fileWork(firstPlayerName, secondPlayerName, firstCount, secondCount);
-        /*System.out.println(one.getName() + " " + one.getSymbol() + " " + one.getId());
-        System.out.println("Игрок 1 совершил " + one.count + " ходов.");
-        System.out.println(two.getName() + " " + two.getSymbol() + " " + two.getId());
-        System.out.println("Игрок 2 совершил " + two.count + " ходов.");*/
-
+        }      
         File file = new File("\\test.xml");
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
