@@ -32,6 +32,8 @@ public class Game {
     static char [][] gameField = new char [VERTICAL][HORIZONTAL];
 
     private static Scanner scanner = new Scanner(System.in);
+    
+    static File file = new File("src/test.xml");
 
 
    public static char firstPlayerSign = 'X';
@@ -219,6 +221,10 @@ public class Game {
                 }
                 Player.step++;
             }
+            Transformer transformer = TransformerFactory.newInstance().newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.transform(new DOMSource(doc), new StreamResult(file));
+            
             System.out.println("Хотите сыграть еще?");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String answer = reader.readLine();
@@ -226,12 +232,6 @@ public class Game {
                 repeat = false;
             }
             Player.step = 1;
-        }      
-        File file = new File("src/test.xml");
-
-        Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.transform(new DOMSource(doc), new StreamResult(file));
-
+        }     
     }
 }
