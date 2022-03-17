@@ -33,8 +33,6 @@ public class Game {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    static File file = new File("d:/rating.txt");
-
 
    public static char firstPlayerSign = 'X';
    public static char secondPlayerSign = 'O';
