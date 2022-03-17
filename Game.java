@@ -229,7 +229,7 @@ public class Game {
             }
             Player.step = 1;
         }      
-        File file = new File("\\test.xml");
+        File file = new File("src/test.xml");
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
