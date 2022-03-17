@@ -17,32 +17,13 @@ public class ParserXml {
         factory.setNamespaceAware(true);
         Document doc = factory.newDocumentBuilder().newDocument();
 
-       /* Element root = doc.createElement("Gameplay");
-        doc.appendChild(root);
-
-        Element player = doc.createElement("Player");
-        player.setAttribute("id", "1");
-        player.setAttribute("name", "Playerr");
-        player.setAttribute("symbol", "X");
-        root.appendChild(player);
-
-        Element game = doc.createElement("Game");
-        root.appendChild(game);
-
-        Element step = doc.createElement("Step");
-        step.setAttribute("val", "3");
-        game.appendChild(step); */
-
-        //Element result = doc.createElement("GameResult");
-        /*root.appendChild(result);
-        result.appendChild(getPlayer(doc, "2", "NAME", "O"));*/
-
+     
 
     }
 
     public static Node getDraw(Document doc) {
         Element result = doc.createElement("GameResult");
-        result.setAttribute("Draw", "Draw");
+        result.appendChild(doc.createTextNode("Draw!"));
         return result;
     }
 
