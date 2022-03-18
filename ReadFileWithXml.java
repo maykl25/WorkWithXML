@@ -20,7 +20,7 @@ public class ReadFileWithXml {
 
     }
 
-    public static void printCost(Document document, ArrayList<String> steps) throws DOMException, XPathExpressionException {
+    public static void printSteps(Document document, ArrayList<String> steps) throws DOMException, XPathExpressionException {
 
         XPathFactory pathFactory = XPathFactory.newInstance();
         XPath xpath = pathFactory.newXPath();
