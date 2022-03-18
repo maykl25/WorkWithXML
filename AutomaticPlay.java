@@ -25,7 +25,7 @@ public class AutomaticPlay {
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document document = documentBuilder.parse("src/test.xml");
 
-            ReadFileWithXml.printCost(document, list);
+            ReadFileWithXml.printSteps(document, list);
 
         } catch (XPathExpressionException | ParserConfigurationException | SAXException | IOException ex) {
             ex.printStackTrace(System.out);
