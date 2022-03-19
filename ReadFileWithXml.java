@@ -15,7 +15,9 @@ import org.xml.sax.SAXException;
 
 import java.util.ArrayList;
 
+
 public class ReadFileWithXml {
+    
     public static void main(String[] args) {
 
     }
@@ -34,6 +36,21 @@ public class ReadFileWithXml {
 
         }
         System.out.println();
+    }
+
+    public static void printPlayers(Document document, ArrayList<String> attributes) throws DOMException, XPathExpressionException {
+        XPathFactory pathFactory = XPathFactory.newInstance();
+        XPath xpath = pathFactory.newXPath();
+
+        XPathExpression expr = xpath.compile("//GameResult/Player");
+
+        NodeList nodes = (NodeList) expr.evaluate(document, XPathConstants.NODESET);
+        for (int i = 0; i < nodes.getLength(); i++) {
+            Node n = nodes.item(i);
+            attributes.add("Player " + n.getAttributes().getNamedItem("id").toString() + " -> " + n.getAttributes().getNamedItem("name").toString() + " is winner as " +
+                    n.getAttributes().getNamedItem("symbol").toString()  + "!");
+
+        }
     }
 
 }

@@ -17,6 +17,7 @@ public class AutomaticPlay {
     static char initialSymbol = '.';
 
     static ArrayList<String> list = new ArrayList<>();
+    public static ArrayList<String> attributes = new ArrayList<>();
 
 
     public static void main(String[] args) {
@@ -26,6 +27,7 @@ public class AutomaticPlay {
             Document document = documentBuilder.parse("src/test.xml");
 
             ReadFileWithXml.printSteps(document, list);
+            ReadFileWithXml.printPlayers(document, attributes);
 
         } catch (XPathExpressionException | ParserConfigurationException | SAXException | IOException ex) {
             ex.printStackTrace(System.out);
@@ -53,8 +55,9 @@ public class AutomaticPlay {
                 System.out.println();
             }
         }
-
-
+        for (String element : attributes) {
+            System.out.println(element);
+        }
     }
     public static void initialGameField() {
         for (int i = 0; i < gameField.length; i++) {
